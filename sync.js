@@ -2,10 +2,11 @@ require('dotenv').config();
 const admin = require('firebase-admin');
 const { createClient } = require('@supabase/supabase-js');
 const cron = require('node-cron');
+const serviceAccount = require('./firebase-key.json');
 
-// Initialisation de Firebase avec l'objet de configuration
+// Initialisation de Firebase avec le fichier de compte de service
 admin.initializeApp({
-  credential: admin.credential.cert(JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT))
+  credential: admin.credential.cert(serviceAccount)
 });
 
 // Initialisation de Supabase

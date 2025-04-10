@@ -1,0 +1,4 @@
+git rm --cached firebase-key.json
+git add .
+git commit -m "Exclure les fichiers sensibles"
+git push origin main
